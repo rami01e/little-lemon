@@ -1,0 +1,22 @@
+nav {
+    position: absolute;
+    right: 0;
+    bottom: 10%;
+    width: 100%;
+}
+
+ul {
+    padding: 0;
+    background-color: aqua;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    text-wrap: nowrap;
+}
