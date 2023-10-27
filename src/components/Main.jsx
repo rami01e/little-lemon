@@ -1,10 +1,4 @@
-const Main = () => {
-    return <main>
-        <p>main info here</p>
-        <p>main info here</p>
-        <p>main info here</p>
-        <p>main info here</p>
-        <p>main info here</p>
-    </main>
+const Main = (props) => {
+    return <main>{props.children}</main>
 };
 export default Main;

@@ -1,9 +1,11 @@
 import "./Footer.css"
+import logo from "../assets/Logo.svg";
+
 const Footer = (props) => {
     return (
     <footer>
         <section>
-            <img src="logo.png" alt="Little Lemon logo" width="150px" height="150px" />
+            <img src={logo} alt="Little Lemon logo" width="150px" height="150px" />
         </section>
         <section>
             {props.children}
