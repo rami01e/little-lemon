@@ -1,35 +1,44 @@
-import './App.css';
-import Nav from './components/Nav';
-import Home from './components/Home';
-import BookingPage from './components/BookingPage';
-import About from './components/About';
-import Menu from './components/Menu';
-import Order from './components/Order';
-import Login from './components/Login';
-import Footer from './components/Footer';
-import { Routes, Route } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
+import pages from './utils/pages.jsx';
+import Layout from './components/layout/Layout.jsx';
+import Home from './components/pages/Home/index.jsx';
+import Bookings from './components/pages/Bookings/index.jsx';
+import ConfirmedBooking from './components/pages/Bookings/ConfirmedBooking.jsx';
+import NotFound from './components/pages/NotFound';
+import UnderConstruction from './components/pages/UnderConstruction';
 
-function App() {
+const App = () => {
   return (
     <>
-    <header className=" sticky-top">
-      <Nav />
-    </header>
-    <main>
-      <Routes>
-          <Route path="/" element={<Home />}></Route>
-          <Route path="/booking" element={<BookingPage />}></Route>
-          <Route path="/about" element={<About />}></Route>
-          <Route path="/menu" element={<Menu />}></Route>
-          <Route path="/order" element={<Order />}></Route>
-          <Route path="/login" element={<Login />}></Route>
-      </Routes>
-    </main>
-    <footer>
-      <Footer />
-    </footer>
+      <Layout>
+        <Routes>
+          <Route path={pages.get('home').path} element={<Home />} />
+          <Route 
+            path={pages.get('about').path} 
+            element={<UnderConstruction />} 
+          />
+          <Route 
+            path={pages.get('menu').path} 
+            element={<UnderConstruction />} 
+          />
+          <Route path={pages.get('bookings').path} element={<Bookings />} />
+          <Route 
+            path={pages.get('confirmedBooking').path} 
+            element={<ConfirmedBooking />} 
+          />
+          <Route 
+            path={pages.get('orderOnline').path} 
+            element={<UnderConstruction />} 
+          />
+          <Route 
+            path={pages.get('login').path} 
+            element={<UnderConstruction />} 
+          />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </Layout>
     </>
   );
-}
+};
 
 export default App;

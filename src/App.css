@@ -1,3 +1,15 @@
 header {
     background-color: #EDEFEE;
 }
+
+.current-location, .nav-item a:hover, .nav-item a:focus {
+  background-color: #F4CE14;
+}
+
+.navbar-nav {
+    height: 100%;
+    align-self: center;
+}
+.nav-link {
+    min-height: 100%;
+}
